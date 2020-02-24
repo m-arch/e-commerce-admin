@@ -5,7 +5,7 @@
   "dependencies": {
     "apollo-link": "^1.2.13",
     "apollo-link-http": "^1.5.16",
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "chartist": "0.10.1",
     "cross-fetch": "^3.0.4",
     "lodash.flowright": "^3.5.0",
