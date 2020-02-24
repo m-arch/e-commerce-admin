@@ -1,0 +1,42 @@
+type Admin {
+  id: ID!
+  username: String!
+  password: String!
+  is_active: Boolean!
+}
+
+type Item {
+  id: ID!
+  title: String!
+  quantity: Int!
+  quantity_sold: Int!
+  cost: Float
+  price: Float
+  is_available: Boolean!
+}
+
+type Status {
+  message: String!
+}
+
+type Auth {
+  token: String
+  error: String
+}
+
+type Query {
+  admins: [Admin]
+  admin(id: ID!): Admin
+  items: [Item]
+  item(id: ID!): Item
+}
+
+type Mutation {
+  login(username: String!, password: String!): Auth!
+  addAdmin(usenrame: String!, password: String!): Admin!
+  deleteAdmin(id: ID!): Admin!
+  deleteItem(id: ID!): Status!
+  newItem(title: String!): ID!
+  editItem(id: ID!, title: String!): ID!
+  stockIn(id: ID!, quantity: Int!, cost: Float!, price: Float!): ID!
+}
