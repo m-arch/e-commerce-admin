@@ -1,0 +1,47 @@
+{
+  "name": "e-commerce-server",
+  "version": "1.0.0",
+  "description": "Backend server side for the e commerce admin interface",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js",
+    "start:prod": "NODE_ENV=production node server/index.js"
+  },
+  "keywords": [
+    "admin",
+    "e-commerce",
+    "server"
+  ],
+  "author": "Marc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-arch/e-commerce-admin/issues"
+  },
+  "homepage": "https://github.com/m-arch/e-commerce-admin#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.10.1",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "graphql": "^14.6.0",
+    "graphql-import": "^1.0.0-beta.2",
+    "graphql-passport": "^0.6.1",
+    "knex": "^0.20.10",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.18.1",
+    "sqlite3": "^4.1.1",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "express-pino-logger": "^4.0.0",
+    "nodemon": "^2.0.2"
+  }
+}
