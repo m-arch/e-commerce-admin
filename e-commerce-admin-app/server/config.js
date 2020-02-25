@@ -2,10 +2,10 @@ module.exports = {
   production: {
     db: {
       host: 'postgres',
-      user: 'hmwwlxiugbwpdq',
-      password: '7f5e9d2479bd777e3b6fd9c9c18c7c8e36ef20d7ed24e2e8323608c3610521fe',
+      user: 'admin',
+      password: 'p@ass',
       port: '5432',
-      database: 'd825tu54f9bjbu'
+      database: 'ecommerce'
     },
     port: 3030,
     security: {
