@@ -1,0 +1,14 @@
+# heroku.yml
+
+setup:
+  addons:
+    -plan: heroku-postgresql
+     as: postgres
+  config:
+     S3_BUCKET: bucket
+
+build:
+  docker:
+    web: Dockerfile
+    config:
+      NODE_ENV: production

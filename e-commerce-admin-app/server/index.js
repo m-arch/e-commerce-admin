@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cfg = require ('./core/getConfig.js');
+const graphqlHTTP = require('express-graphql');
 const { ApolloServer } = require('apollo-server-express');
 const { importSchema } = require('graphql-import');
 const passport = require('passport');
@@ -9,6 +10,7 @@ const session = require('express-session');
 const { GraphQLLocalStrategy, buildContext } = require('graphql-passport');
 const authorizeUser = require('./helpers/auth.js');
 const { Strategy, ExtractJwt } = require('passport-jwt');
+const path = require('path');
 
 async function start() {
   try{
@@ -32,12 +34,15 @@ async function start() {
     const server = new ApolloServer({ typeDefs, resolvers, context: (req, res) => buildContext(req,res)});
     const app = express();
     server.applyMiddleware({ app });
+    
     app.set('config', cfg);
     app.set('passport', passport);
 
+    app.use(express.static(path.join(__dirname, '../build')));
+
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use('/', express.static('public'));
-    
+
     app.use(passport.initialize());
     app.use(passport.session());
     
