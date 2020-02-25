@@ -3,7 +3,7 @@
 This a simple crud for adding items to the inventory. 
 The project uses Nodejs+Reactjs+Apollo
 
-There is an instance of the project running on http://109.74.201.239:3030
+There is an instance of the project running on http://109.74.201.239:3030 (username: admin, password: pass)
 
 To run project in dev mode locally:
 `cd e-commerce-admin-app/`
