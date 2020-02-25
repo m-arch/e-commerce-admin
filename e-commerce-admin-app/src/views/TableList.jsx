@@ -287,6 +287,8 @@ class TableList extends Component {
                       bsStyle="primary pull-right"
                       onClick= { () => this.openNewItemModal(response.refetch)}>Add new Item</Button>
                   </div>
+                </Row>
+                <Row>
                   <Col md={12}>
                     <Card
                       title="Inventory"
