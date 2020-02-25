@@ -14,7 +14,7 @@ const path = require('path');
 
 async function start() {
   try{
-    const typeDefs = await importSchema('./src/graphql/schema.graphql');
+    const typeDefs = await importSchema('server/src/graphql/schema.graphql');
     const params = {
       secretOrKey: cfg.security.secret,
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
