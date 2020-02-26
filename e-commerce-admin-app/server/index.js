@@ -40,8 +40,16 @@ async function start() {
 
     app.use(express.static(path.join(__dirname, '../build')));
 
+    app.use('/*', function(req, res) {
+      res.sendFile(path.join(__dirname, '../build/index.html'), function(err) {
+        if(err) {
+          res.status(500).send(err);
+        }
+      });
+    });
+
     app.use(bodyParser.urlencoded({ extended: false }));
-    app.use('/', express.static('public'));
+    app.use('/', express.static('../public'));
 
     app.use(passport.initialize());
     app.use(passport.session());
