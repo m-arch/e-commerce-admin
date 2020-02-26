@@ -13,6 +13,9 @@ const admin = (_, { id }) => getTable().where('id', id).first();
 
 const login = async (_, {username, password}, context) => {
   try{
+    if(!username || !password){
+      return Promise.resolve({error: new Error("User not found!")});
+    }
     return new Promise ((resolve, err) => {
       context.authenticate('graphql-local', { username, password }).then((result) => {
         if(result.user)
